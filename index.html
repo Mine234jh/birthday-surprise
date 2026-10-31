@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Love ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;overflow-x:hidden;
+ font-family:Arial,sans-serif;text-align:center;color:white;
+ background:linear-gradient(135deg,#180b28,#6c164e,#d63384);
+ display:flex;justify-content:center;align-items:center;padding:20px
+}
+.card{
+ width:100%;max-width:430px;padding:30px 20px;border-radius:25px;
+ background:rgba(255,255,255,.12);backdrop-filter:blur(8px);
+ border:1px solid rgba(255,255,255,.25);box-shadow:0 10px 40px #0005
+}
+h1{color:#ffb6d9;font-size:clamp(30px,8vw,43px);text-shadow:0 0 20px #ff69b4}
+.cake{font-size:75px;margin:15px;animation:bounce 1.5s infinite}
+p{line-height:1.8;font-size:17px}
+button{
+ border:0;border-radius:30px;padding:14px 22px;margin:8px;
+ background:#ff5ca8;color:white;font-size:16px;font-weight:bold;
+ box-shadow:0 4px 15px #ff69b477;cursor:pointer
+}
+button:active{transform:scale(.96)}
+#letter{display:none;background:#fff1f8;color:#79204e;padding:18px;border-radius:18px;margin-top:18px}
+.heart{position:fixed;top:-30px;animation:fall linear forwards;pointer-events:none}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0}}
+@keyframes bounce{50%{transform:translateY(-10px)}}
+#surprise{display:none}
+</style>
+</head>
+<body>
+<div class="card">
+ <div style="font-size:35px">💖 ✨ 💖</div>
+ <h1>Happy Birthday! 🎂</h1>
+ <h2>To My Special Person 💗</h2>
+ <div class="cake">🎂</div>
+ <p>Today is all about you! 🌷<br>
+ You make the world a little more beautiful just by being in it. ❤️</p>
+ <button onclick="openSurprise()">🎁 Open Your Surprise</button>
+ <div id="surprise">
+  <div id="letter">
+   <h2>💌 A Letter For You</h2>
+   <p>Happy Birthday, my love! ❤️</p>
+   <p>May your days be filled with happiness, your dreams come true, and your heart always feel loved. Thank you for bringing so much joy into my life. You deserve all the beautiful things in this world. 🌹</p>
+   <p>Keep smiling and shining, today and always. 💕</p>
+   <h2>Love you! 🥰</h2>
+  </div>
+ </div>
+ <button onclick="toggleMusic()" id="musicBtn">🎵 Play Birthday Music</button>
+ <p style="font-size:12px;opacity:.8">Made with ❤️ just for you</p>
+</div>
+<audio id="music" loop>
+ <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+<script>
+function openSurprise(){
+ document.getElementById('surprise').style.display='block';
+ document.getElementById('letter').style.display='block';
+ for(let i=0;i<25;i++)setTimeout(makeHeart,i*100);
+}
+let playing=false;
+function toggleMusic(){
+ const m=document.getElementById('music');
+ if(!playing){
+  m.play().then(()=>{playing=true;document.getElementById('musicBtn').innerText='⏸ Pause Music'}).catch(()=>alert('Please check your internet connection and try again.'));
+ }else{
+  m.pause();playing=false;document.getElementById('musicBtn').innerText='🎵 Play Birthday Music';
+ }
+}
+function makeHeart(){
+ const h=document.createElement('div');h.className='heart';
+ h.textContent=['💗','💖','💕','✨','🌸'][Math.floor(Math.random()*5)];
+ h.style.left=Math.random()*100+'vw';
+ h.style.animationDuration=(3+Math.random()*4)+'s';
+ h.style.fontSize=(18+Math.random()*22)+'px';
+ document.body.appendChild(h);setTimeout(()=>h.remove(),7000);
+}
+setInterval(makeHeart,450);
+</script>
+</body>
+</html>
