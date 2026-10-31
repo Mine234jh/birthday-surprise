@@ -1,86 +1,282 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="my">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday My Love ❤️</title>
+<title>Happy Birthday My Love 💗</title>
+
 <style>
-*{box-sizing:border-box}
-body{
- margin:0;min-height:100vh;overflow-x:hidden;
- font-family:Arial,sans-serif;text-align:center;color:white;
- background:linear-gradient(135deg,#180b28,#6c164e,#d63384);
- display:flex;justify-content:center;align-items:center;padding:20px
+* {
+  box-sizing: border-box;
 }
-.card{
- width:100%;max-width:430px;padding:30px 20px;border-radius:25px;
- background:rgba(255,255,255,.12);backdrop-filter:blur(8px);
- border:1px solid rgba(255,255,255,.25);box-shadow:0 10px 40px #0005
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(135deg, #ffafbd, #ffc3a0, #ff8fab);
+  overflow-x: hidden;
 }
-h1{color:#ffb6d9;font-size:clamp(30px,8vw,43px);text-shadow:0 0 20px #ff69b4}
-.cake{font-size:75px;margin:15px;animation:bounce 1.5s infinite}
-p{line-height:1.8;font-size:17px}
-button{
- border:0;border-radius:30px;padding:14px 22px;margin:8px;
- background:#ff5ca8;color:white;font-size:16px;font-weight:bold;
- box-shadow:0 4px 15px #ff69b477;cursor:pointer
+
+.container {
+  min-height: 100vh;
+  padding: 30px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-button:active{transform:scale(.96)}
-#letter{display:none;background:#fff1f8;color:#79204e;padding:18px;border-radius:18px;margin-top:18px}
-.heart{position:fixed;top:-30px;animation:fall linear forwards;pointer-events:none}
-@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0}}
-@keyframes bounce{50%{transform:translateY(-10px)}}
-#surprise{display:none}
+
+h1 {
+  color: #fff;
+  text-shadow: 0 3px 10px #ff4f87;
+}
+
+.subtitle {
+  font-size: 17px;
+}
+
+.gift {
+  font-size: 110px;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+button {
+  border: none;
+  padding: 14px 25px;
+  margin: 10px;
+  border-radius: 30px;
+  background: #ff3f7f;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px #d94a7a66;
+}
+
+button:hover {
+  background: #ff1767;
+}
+
+#surprise {
+  display: none;
+  max-width: 500px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 25px 18px;
+  background: #ffffff30;
+  border: 1px solid #ffffff70;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px #b8326040;
+  backdrop-filter: blur(8px);
+  animation: appear 1s ease;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* နှလုံးပုံဓာတ်ပုံဘောင် */
+.heart-frame {
+  width: 220px;
+  height: 210px;
+  margin: 20px auto;
+  position: relative;
+  filter: drop-shadow(0 5px 12px #e91e6370);
+}
+
+.heart-frame svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.heart-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  clip-path: url(#heartClip);
+}
+
+.photo-note {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.message {
+  line-height: 2;
+  font-size: 17px;
+  text-align: center;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.love {
+  font-size: 26px;
+  margin-top: 20px;
+}
+
+.music-box {
+  margin: 20px 0;
+}
+
+.music-box iframe {
+  width: 100%;
+  max-width: 350px;
+  height: 100px;
+  border: none;
+  border-radius: 12px;
+}
+
+.heart {
+  position: fixed;
+  bottom: -30px;
+  pointer-events: none;
+  animation: floatUp 6s linear forwards;
+  z-index: 10;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+footer {
+  margin-top: 25px;
+  font-size: 13px;
+}
 </style>
 </head>
+
 <body>
-<div class="card">
- <div style="font-size:35px">💖 ✨ 💖</div>
- <h1>Happy Birthday! 🎂</h1>
- <h2>To My Special Person 💗</h2>
- <div class="cake">🎂</div>
- <p>Today is all about you! 🌷<br>
- You make the world a little more beautiful just by being in it. ❤️</p>
- <button onclick="openSurprise()">🎁 Open Your Surprise</button>
- <div id="surprise">
-  <div id="letter">
-   <h2>💌 A Letter For You</h2>
-   <p>Happy Birthday, my love! ❤️</p>
-   <p>May your days be filled with happiness, your dreams come true, and your heart always feel loved. Thank you for bringing so much joy into my life. You deserve all the beautiful things in this world. 🌹</p>
-   <p>Keep smiling and shining, today and always. 💕</p>
-   <h2>Love you! 🥰</h2>
+
+<!-- နှလုံးပုံဖြတ်တောက်ရန် SVG -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <clipPath id="heartClip" clipPathUnits="objectBoundingBox">
+      <path d="M .5 .95
+      C .42 .85 .03 .60 .03 .30
+      C .03 .08 .30 -.02 .5 .20
+      C .70 -.02 .97 .08 .97 .30
+      C .97 .60 .58 .85 .5 .95 Z"/>
+    </clipPath>
+  </defs>
+</svg>
+
+<div class="container">
+
+  <div id="intro">
+    <h1>🎂 Happy Birthday 💗</h1>
+    <p class="subtitle">မင်းအတွက် Surprise လေးတစ်ခုရှိတယ် 🎁</p>
+
+    <button class="gift" onclick="openGift()" aria-label="Open gift">
+      🎁
+    </button>
+
+    <p>Open Your Surprise 💝</p>
+    <button onclick="openGift()">လက်ဆောင်လေး ဖွင့်မယ် 💗</button>
   </div>
- </div>
- <button onclick="toggleMusic()" id="musicBtn">🎵 Play Birthday Music</button>
- <p style="font-size:12px;opacity:.8">Made with ❤️ just for you</p>
+
+  <div id="surprise">
+
+    <h1>Happy birthday par💞💐</h1>
+
+    <!-- သူ့ပုံကို girlfriend.jpg အမည်ပေးပြီး ဒီ HTML ဖိုင်နဲ့အတူ ထည့်ပါ -->
+    <div class="heart-frame">
+      <img src="girlfriend.jpg"
+           alt="My special girl"
+           onerror="this.style.display='none';document.getElementById('photoMissing').style.display='block';">
+    </div>
+
+    <p id="photoMissing" class="photo-note" style="display:none">
+      ❤️ သူ့ပုံလေးကို girlfriend.jpg လို့ အမည်ပေးပြီး Website ထဲ ထည့်ပေးနော် ❤️
+    </p>
+
+    <div class="message">
+ကောင်မလေးရေ ပျော်ရွှင်စရာမွေးနေ့လေးဖြစ်ပါစေ ဆုတောင်းပေးလိုက်ပါတယ် အခုမွေးနေ့ကနေစပြီး ပျော်စရာတေနဲ့ပဲ ဘ၀ကိုဖျက်သန်းနိုင်ပါစေ
+
+ငါနဲ့ အတူရှိပေးခဲ့တဲ့နေ့တွေအတွက်လည်း ကျေးဇူးတင်ပါတယ်💞 မင်းကိုစိတ်ညစ်စရာတေပဲပေးနေမိလို့လည်း တောင်းပန်ပါတယ်
+
+ပျော်စရာမွေးနေ့လည်းဖြစ်ပါစေ ကလေးလေးရေ💞💐 မိဘကို လုပ်ကျွေးနိုင်တဲ့ သမီးကောင်းရတနာလေးဖြစ်ပါစေ ဗျာ💐
+    </div>
+
+    <div class="love">💗💐💞🎂💞💐💗</div>
+
+    <div class="music-box">
+      <h3>🎵 Our Special Song 🎵</h3>
+      <p>သီချင်းလေး နားထောင်ဖို့ အောက်က Play ကိုနှိပ်နော် 💕</p>
+
+      <iframe
+        src="https://www.youtube.com/embed/XHIPcqzrhVU"
+        title="Birthday Song"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <p>🌹 မင်းရဲ့နေ့ရက်တိုင်း ပျော်ရွှင်ပါစေ 🌹</p>
+    <p>With Love 💗</p>
+
+    <footer>Made with ❤️ just for you</footer>
+
+  </div>
+
 </div>
-<audio id="music" loop>
- <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-</audio>
+
 <script>
-function openSurprise(){
- document.getElementById('surprise').style.display='block';
- document.getElementById('letter').style.display='block';
- for(let i=0;i<25;i++)setTimeout(makeHeart,i*100);
+function openGift() {
+  document.getElementById("intro").style.display = "none";
+  document.getElementById("surprise").style.display = "block";
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+  startHearts();
 }
-let playing=false;
-function toggleMusic(){
- const m=document.getElementById('music');
- if(!playing){
-  m.play().then(()=>{playing=true;document.getElementById('musicBtn').innerText='⏸ Pause Music'}).catch(()=>alert('Please check your internet connection and try again.'));
- }else{
-  m.pause();playing=false;document.getElementById('musicBtn').innerText='🎵 Play Birthday Music';
- }
+
+let heartsStarted = false;
+
+function startHearts() {
+  if (heartsStarted) return;
+  heartsStarted = true;
+
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+
+    const emojis = ["💗", "💖", "💕", "💘", "🌹", "💐"];
+    heart.textContent = emojis[
+      Math.floor(Math.random() * emojis.length)
+    ];
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (18 + Math.random() * 22) + "px";
+    heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 8500);
+  }, 400);
 }
-function makeHeart(){
- const h=document.createElement('div');h.className='heart';
- h.textContent=['💗','💖','💕','✨','🌸'][Math.floor(Math.random()*5)];
- h.style.left=Math.random()*100+'vw';
- h.style.animationDuration=(3+Math.random()*4)+'s';
- h.style.fontSize=(18+Math.random()*22)+'px';
- document.body.appendChild(h);setTimeout(()=>h.remove(),7000);
-}
-setInterval(makeHeart,450);
 </script>
+
 </body>
 </html>
