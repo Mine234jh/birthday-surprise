@@ -6,267 +6,225 @@
 <title>Happy Birthday My Love 💗</title>
 
 <style>
-* {
-  box-sizing: border-box;
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  min-height:100vh;
+  overflow-x:hidden;
+  background:linear-gradient(180deg,#020111,#101b45,#263b68);
+  color:white;
+  font-family:Arial,sans-serif;
+  text-align:center;
 }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  overflow-x: hidden;
-  background:
-    radial-gradient(ellipse at 50% 20%, #293e70 0%, transparent 60%),
-    linear-gradient(180deg, #05091d, #142449, #080d25);
-  color: white;
-  font-family: Arial, sans-serif;
-  text-align: center;
+.stars{
+  position:fixed;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  z-index:0;
 }
 
-#stars {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 0;
+.star{
+  position:absolute;
+  color:white;
+  animation:twinkle 2s infinite alternate;
 }
 
-.star {
-  position: absolute;
-  color: white;
-  text-shadow: 0 0 8px white, 0 0 15px #91baff;
-  animation: twinkle 2s infinite alternate;
+@keyframes twinkle{
+  from{opacity:.25;transform:scale(.7)}
+  to{opacity:1;transform:scale(1.2)}
 }
 
-@keyframes twinkle {
-  from { opacity: .25; transform: scale(.7); }
-  to { opacity: 1; transform: scale(1.2); }
+.moon{
+  position:fixed;
+  top:35px;
+  right:35px;
+  width:65px;
+  height:65px;
+  border-radius:50%;
+  background:#fff4c7;
+  box-shadow:0 0 35px #fff4c7;
+  z-index:0;
 }
 
-.container {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 700px;
-  margin: auto;
-  padding: 28px 16px 50px;
+.container{
+  position:relative;
+  z-index:1;
+  width:100%;
+  max-width:500px;
+  margin:auto;
+  padding:65px 20px 40px;
 }
 
-.top {
-  color: #ffe0f1;
-  font-size: 17px;
-  line-height: 2;
-  margin: 15px 0;
+h1{
+  color:#ffc8e2;
+  font-size:30px;
+  text-shadow:0 0 18px #ff70b8;
 }
 
-.decor {
-  font-size: 31px;
-  margin: 25px 0;
-  animation: heartbeat 1.5s infinite;
+.subtitle{
+  color:#e4e9ff;
+  font-size:17px;
 }
 
-@keyframes heartbeat {
-  50% { transform: scale(1.1); }
+.photo-frame{
+  width:220px;
+  height:260px;
+  margin:28px auto;
+  padding:5px;
+  border:3px solid #ff8fc7;
+  border-radius:22px;
+  box-shadow:0 0 25px #ff69b4;
+  overflow:hidden;
 }
 
-.card {
-  margin: 25px auto;
-  padding: 28px 16px;
-  border: 2px solid #ffb8e6;
-  border-radius: 32px;
-  background: #ffffff08;
-  box-shadow: 0 0 25px #ff83d5;
+.photo-frame img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:15px;
+  display:block;
 }
 
-h1 {
-  font-size: clamp(26px, 6vw, 38px);
-  color: #ffc3e7;
-  text-shadow: 0 0 15px #ff71c8;
-  line-height: 1.6;
+.message{
+  background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,190,225,.4);
+  border-radius:20px;
+  padding:22px 17px;
+  line-height:2;
+  font-size:16px;
+  white-space:pre-line;
+  box-shadow:0 0 20px rgba(255,105,180,.15);
 }
 
-h2 {
-  color: #ffd0eb;
-  line-height: 1.8;
+button{
+  margin-top:22px;
+  padding:13px 25px;
+  border:none;
+  border-radius:30px;
+  background:#ff83bc;
+  color:#fff;
+  font-size:16px;
+  cursor:pointer;
 }
 
-.photo {
-  width: 240px;
-  height: 290px;
-  max-width: 90%;
-  margin: 15px auto 25px;
-  padding: 5px;
-  border: 3px solid #ffb8e6;
-  border-radius: 48%;
-  overflow: hidden;
-  box-shadow: 0 0 20px #ff82d4, 0 0 45px #ff82d466;
+.music-note{
+  margin-top:15px;
+  font-size:13px;
+  color:#cdd8ff;
 }
 
-.photo img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  border-radius: 48%;
+.heart{
+  position:fixed;
+  bottom:-30px;
+  color:#ff8fc7;
+  animation:floatUp 7s linear infinite;
+  z-index:0;
+  pointer-events:none;
 }
 
-.message {
-  font-size: 17px;
-  line-height: 2.1;
-  white-space: pre-line;
-  color: #fff0f8;
-  margin: 24px 0;
-}
-
-.flowers {
-  font-size: 32px;
-  margin: 20px 0;
-}
-
-button {
-  border: none;
-  border-radius: 30px;
-  padding: 14px 24px;
-  margin: 10px 4px;
-  background: linear-gradient(90deg, #ff83ce, #ffd0ec);
-  color: #401333;
-  font-size: 16px;
-  font-weight: bold;
-  box-shadow: 0 0 15px #ff8bd9;
-}
-
-.music {
-  margin: 25px auto;
-  padding: 18px 12px;
-  border: 1px solid #e7a9df;
-  border-radius: 25px;
-  background: #ffffff0b;
-}
-
-#player {
-  width: 100%;
-  max-width: 360px;
-  height: 200px;
-  margin-top: 12px;
-  border: none;
-  border-radius: 12px;
-}
-
-footer {
-  margin-top: 35px;
-  color: #ffd2ec;
-  line-height: 2;
+@keyframes floatUp{
+  from{transform:translateY(0);opacity:0}
+  20%{opacity:1}
+  to{transform:translateY(-110vh);opacity:0}
 }
 </style>
 </head>
 
 <body>
 
-<div id="stars"></div>
+<div class="stars" id="stars"></div>
+<div class="moon"></div>
 
 <div class="container">
 
-  <div class="top">
-    ညကောင်းကင်က ကြယ်လေးတွေလို ✨<br>
-    နင့်ဘဝလေးလည်း အမြဲတမ်း လင်းလက်နေပါစေ 💗
+  <h1>Happy Birthday Par 💞💐</h1>
+  <p class="subtitle">🌙 ကလေးလေးအတွက် မွေးနေ့လက်ဆောင် 🌙</p>
+
+  <div class="photo-frame">
+    <img
+      src="108fb28ef2da48deb97383728c5fcd14.webp"
+      alt="မွေးနေ့ရှင်လေး"
+    >
   </div>
 
-  <div class="decor">♡ 💗 ✧ 💖 ♡</div>
+  <div class="message">မွေးနေ့မှာ ပျော်ရွှင်မှုတွေအများကြီး ပိုင်ဆိုင်နိုင်ပါစေ ကလေးလေးရေ 💗🎂
 
-  <section class="card">
+ကိုယ်တို့အတူတူရှိခဲ့တဲ့ နေ့ရက်လေးတွေအတွက် ကျေးဇူးတင်ပါတယ်နော်။ 🥹💞
 
-    <h1>Happy Birthday Par 💞💐</h1>
+ကိုယ်ကြောင့် စိတ်ပူခဲ့ရတာတွေ၊ စိတ်ညစ်ခဲ့ရတာတွေရှိရင်လည်း တောင်းပန်ပါတယ်နော်။ နောက်ဆို ပိုဂရုစိုက်ပေးမယ်။ ❤️
 
-    <div class="photo">
-      <!-- သူ့ဓာတ်ပုံကို girl.jpg လို့ အမည်ပေးပါ -->
-      <img src="girl.jpg" alt="မွေးနေ့ရှင်လေးရဲ့ ဓာတ်ပုံ">
-    </div>
+ကလေးလေးရေ အမြဲတမ်း အပြုံးလေးတွေနဲ့ ပျော်ပျော်ရွှင်ရွှင် နေနိုင်ပါစေ။ ကိုယ်ချစ်ရတဲ့သူတွေနဲ့လည်း အမြဲတမ်း အဆင်ပြေပါစေ။ 💐
 
-    <h2>မွေးနေ့မှာ ပျော်ရွှင်ပါစေ ကလေးလေးရေ 💗</h2>
+မိဘနှစ်ပါးကိုလည်း ကောင်းကောင်းပြုစုစောင့်ရှောက်နိုင်တဲ့ သမီးလိမ္မာလေးတစ်ယောက် ဖြစ်ပါစေနော်။ 🫶
 
-    <div class="message">ကလေးလေးရေ 💕
-ဒီနေ့က မင်းအတွက် အရမ်းထူးခြားတဲ့နေ့လေးပါ။
+ကလေးလေးရဲ့ အိပ်မက်တွေအားလုံး တစ်ခုချင်းစီ ပြည့်ဝလာပါစေ။ မွေးနေ့မှစပြီး နေ့ရက်တိုင်း လှပပါစေ။ 🌙✨
 
-ကိုယ်တို့အတူတူ ဖြတ်သန်းခဲ့ရတဲ့ နေ့ရက်လေးတွေအတွက်
-ကျေးဇူးအများကြီးတင်ပါတယ်နော်။ 💗
+Happy Birthday ပါ ကလေးလေးရေ။ 💗🎂💐</div>
 
-တစ်ခါတလေ ကိုယ်ကြောင့် မင်းစိတ်ညစ်ခဲ့ရတာ၊
-စိတ်ပူခဲ့ရတာတွေရှိရင်လည်း တောင်းပန်ပါတယ်။
+  <button onclick="playMusic()">🎵 သီချင်းဖွင့်မယ်</button>
+  <div class="music-note" id="musicStatus">
+    သီချင်းအလိုအလျောက်ဖွင့်ဖို့ ကြိုးစားနေပါတယ် 💗
+  </div>
 
-မင့းရဲ့ အပြုံးလေးတွေကို အမြဲမြင်ချင်တယ်။
-မင်းစိတ်ချမ်းသာပြီး ပျော်ရွှင်နေရတာကိုလည်း
-ကိုယ်အမြဲမြင်ချင်တယ်။ 💐
-
-မိဘနှစ်ပါးအပေါ် သိတတ်လိမ္မာပြီး
-မိဘကို ပြန်လည်လုပ်ကျွေးနိုင်တဲ့
-သမီးကောင်းလေးတစ်ယောက် ဖြစ်ပါစေနော်။
-
-နင်လိုချင်တဲ့ အိပ်မက်တွေအားလုံး
-တစ်နေ့နေ့မှာ အကောင်အထည်ဖော်နိုင်ပါစေ။ ✨
-
-မွေးနေ့မှစပြီး နေ့ရက်တိုင်းမှာ
-ပျော်ရွှင်ခြင်းတွေ၊ အောင်မြင်ခြင်းတွေနဲ့
-ပြည့်စုံနေပါစေ ကလေးလေးရေ။ 💖
-
-Happy Birthday ပါနော် 💗💐</div>
-
-    <div class="flowers">🌹 💐 🌷 💗 🌷 💐 🌹</div>
-
-    <button onclick="showLove()">
-      ဒီနေရာလေးကို နှိပ်ပါ 💌
-    </button>
-
-    <p id="loveMessage" style="line-height:2;color:#ffd0eb"></p>
-
-  </section>
-
-  <section class="music">
-    <h2>🎵 Our Special Song 🎵</h2>
-    <p>နင့်အတွက် သီချင်းလေးပါ 💗</p>
-
-    <iframe
-      id="player"
-      src="https://www.youtube.com/embed/XHIPcqzrhVU?autoplay=1&playsinline=1"
-      title="Birthday Song"
-      allow="autoplay; encrypted-media; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-
-    <p style="font-size:13px;color:#e5d8f3">
-      သီချင်းမဖွင့်လာရင် အောက်က Play ခလုတ်ကို နှိပ်ပေးပါနော် 🎶
-    </p>
-  </section>
-
-  <footer>
-    ကြယ်လေးတွေ အများကြီးရှိတဲ့ ကောင်းကင်ကြီးအောက်မှာ ✨<br>
-    နင့်ရဲ့ နေ့ရက်တိုင်း လှပနေပါစေ 💗<br><br>
-    Made with Love 💞
-  </footer>
+  <audio id="song" loop preload="auto">
+    <source src="https://www.youtube.com/watch?v=XHIPcqzrhVU" type="audio/mpeg">
+  </audio>
 
 </div>
 
 <script>
-// ကြယ်လေးတွေ ဖန်တီးခြင်း
+/* ကြယ်လေးတွေ ဖန်တီးခြင်း */
 const stars = document.getElementById("stars");
 
-for (let i = 0; i < 110; i++) {
-  const star = document.createElement("span");
-  star.className = "star";
-  star.textContent = Math.random() > 0.8 ? "✦" : "·";
-
-  star.style.left = Math.random() * 100 + "%";
-  star.style.top = Math.random() * 100 + "%";
-  star.style.fontSize = (Math.random() * 15 + 5) + "px";
-  star.style.animationDelay = Math.random() * 3 + "s";
-  star.style.animationDuration = (Math.random() * 2 + 1.5) + "s";
-
+for(let i=0;i<100;i++){
+  const star=document.createElement("span");
+  star.className="star";
+  star.textContent=Math.random()>.5?"✦":"·";
+  star.style.left=Math.random()*100+"%";
+  star.style.top=Math.random()*100+"%";
+  star.style.fontSize=(Math.random()*12+5)+"px";
+  star.style.animationDelay=Math.random()*3+"s";
   stars.appendChild(star);
 }
 
-// ခလုတ်နှိပ်လျှင် စာပေါ်လာမယ်
-function showLove() {
-  document.getElementById("loveMessage").textContent =
-    "နင့်ကို အမြဲတန်ဖိုးထားပေးမယ်နော် 💗✨ Happy Birthday ပါ ကလေးလေးရေ 💐";
+/* လွင့်တက်လာမယ့် နှလုံးလေးတွေ */
+setInterval(()=>{
+  const heart=document.createElement("div");
+  heart.className="heart";
+  heart.textContent="♥";
+  heart.style.left=Math.random()*100+"%";
+  heart.style.fontSize=(Math.random()*15+12)+"px";
+  document.body.appendChild(heart);
+  setTimeout(()=>heart.remove(),7000);
+},900);
+
+/*
+  မှတ်ချက်:
+  YouTube URL ကို <audio> ထဲထည့်ရုံနဲ့ မဖွင့်နိုင်ပါ။
+  အောက်က autoplay ကြိုးစားမှုက YouTube သီချင်းကို
+  တိုက်ရိုက်ဖွင့်ပေးမယ့်နည်း မဟုတ်ပါ။
+*/
+const song=document.getElementById("song");
+
+function playMusic(){
+  document.getElementById("musicStatus").textContent=
+    "YouTube သီချင်းအတွက် အောက်ကခလုတ်ကိုနှိပ်ပါ 💗";
+
+  window.open(
+    "https://www.youtube.com/watch?v=XHIPcqzrhVU",
+    "_blank"
+  );
 }
+
+window.addEventListener("load",()=>{
+  song.play().catch(()=>{
+    document.getElementById("musicStatus").textContent=
+      "သီချင်းဖွင့်ရန် 🎵 ခလုတ်ကိုနှိပ်ပါနော် 💗";
+  });
+});
 </script>
 
 </body>
