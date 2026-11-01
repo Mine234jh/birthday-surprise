@@ -1,405 +1,124 @@
-
 <!DOCTYPE html>
 <html lang="my">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Happy Birthday My Love 💗</title>
+<title>Happy Birthday နွေးလေး 💗</title>
 
 <style>
-* {
-  box-sizing: border-box;
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;overflow-x:hidden;
+ color:#fff0fa;text-align:center;
+ font-family:sans-serif;
+ background:radial-gradient(ellipse at top,#283b70,#10162f 55%,#070b1b);
 }
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  color: white;
-  background: linear-gradient(
-    135deg,
-    #ffafbd,
-    #ffc3a0,
-    #ff8fab,
-    #ffb6d5
-  );
-  background-size: 300% 300%;
-  animation: bgMove 10s ease infinite;
-  overflow-x: hidden;
+.sky{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+main{position:relative;z-index:1;max-width:700px;margin:auto;padding:25px 16px 50px}
+h1{color:#ffc6e7;text-shadow:0 0 20px #ff68b6;font-size:clamp(27px,7vw,42px)}
+p{line-height:2}
+.star{position:absolute;color:white;animation:blink 2s infinite alternate}
+@keyframes blink{from{opacity:.2}to{opacity:1;text-shadow:0 0 12px white}}
+.float{position:absolute;bottom:-50px;animation:up 12s linear infinite}
+@keyframes up{to{transform:translateY(-115vh) rotate(360deg);opacity:0}}
+.photo{
+ width:min(80%,330px);margin:25px auto 12px;
+ padding:10px;border:2px solid #ffc1e6;border-radius:22px;
+ background:#ffffff12;box-shadow:0 0 28px #ff80c5;
+ position:relative
 }
-
-@keyframes bgMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+.photo img{width:100%;height:auto;display:block;border-radius:14px}
+.heart{position:absolute;color:#ff8acb;font-size:27px;text-shadow:0 0 12px #ff6db8}
+.h1{top:20px;left:-15px}.h2{right:-15px;top:45%}
+.card{
+ margin:30px auto;padding:24px 18px;max-width:650px;
+ border:1px solid #e9b7e7;border-radius:24px;
+ background:#ffffff0c;box-shadow:0 0 25px #a58cff24;
+ line-height:2.1;white-space:pre-line
 }
-
-.container {
-  min-height: 100vh;
-  padding: 30px 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+button{
+ border:0;border-radius:30px;padding:13px 24px;
+ background:linear-gradient(90deg,#ffc9e8,#d6c8ff);
+ color:#24132f;font-size:16px;font-weight:bold
 }
-
-h1 {
-  color: white;
-  text-shadow: 0 3px 10px #ff4f87;
-}
-
-.subtitle {
-  font-size: 17px;
-}
-
-.gift {
-  font-size: 110px;
-  cursor: pointer;
-  border: none;
-  background: transparent;
-  animation: bounce 1.5s infinite;
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
-}
-
-button {
-  border: none;
-  padding: 14px 25px;
-  margin: 10px;
-  border-radius: 30px;
-  background: #ff3f7f;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  box-shadow: 0 5px 15px #d94a7a66;
-}
-
-button:hover {
-  background: #ff1767;
-}
-
-#surprise {
-  display: none;
-  max-width: 500px;
-  width: 100%;
-  margin: 20px auto;
-  padding: 25px 18px;
-  background: #ffffff30;
-  border: 1px solid #ffffff70;
-  border-radius: 25px;
-  box-shadow: 0 10px 30px #b8326040;
-  backdrop-filter: blur(8px);
-  animation: appear 1s ease;
-}
-
-@keyframes appear {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* နှလုံးပုံ ဓာတ်ပုံဘောင် */
-.heart-frame {
-  width: 220px;
-  height: 210px;
-  margin: 20px auto;
-  filter: drop-shadow(0 5px 12px #e91e6370);
-}
-
-.heart-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  clip-path: url(#heartClip);
-}
-
-.photo-note {
-  font-size: 13px;
-  opacity: 0.9;
-}
-
-.message {
-  line-height: 2;
-  font-size: 17px;
-  text-align: center;
-  white-space: pre-line;
-  overflow-wrap: anywhere;
-}
-
-.love {
-  font-size: 26px;
-  margin-top: 20px;
-}
-
-.music-box {
-  margin: 25px 0;
-}
-
-.music-box iframe {
-  width: 100%;
-  max-width: 350px;
-  height: 100px;
-  border: none;
-  border-radius: 12px;
-}
-
-.music-note {
-  font-size: 14px;
-  line-height: 1.8;
-}
-
-.heart {
-  position: fixed;
-  bottom: -30px;
-  pointer-events: none;
-  animation: floatUp 6s linear forwards;
-  z-index: 10;
-}
-
-@keyframes floatUp {
-  from {
-    transform: translateY(0) rotate(0deg);
-    opacity: 1;
-  }
-  to {
-    transform: translateY(-110vh) rotate(360deg);
-    opacity: 0;
-  }
-}
-
-footer {
-  margin-top: 25px;
-  font-size: 13px;
-}
+.small{font-size:13px;color:#d9d6f5}
 </style>
 </head>
-
 <body>
+<div class="sky" id="sky"></div>
 
-<!-- နှလုံးပုံဖြတ်တောက်ရန် SVG -->
-<svg width="0" height="0"
-     style="position:absolute">
-  <defs>
-    <clipPath id="heartClip"
-              clipPathUnits="objectBoundingBox">
-      <path d="
-        M .5 .95
-        C .42 .85 .03 .60 .03 .30
-        C .03 .08 .30 -.02 .5 .20
-        C .70 -.02 .97 .08 .97 .30
-        C .97 .60 .58 .85 .5 .95 Z
-      "/>
-    </clipPath>
-  </defs>
-</svg>
+<main>
+ <div style="font-size:42px">🌙</div>
+ <h1>Happy Birthday နွေးလေး 💗</h1>
+ <p>ဒီညကောင်းကင်လိုပဲ နွေးရဲ့နေ့ရက်တိုင်း လှပတောက်ပနေပါစေ ✨</p>
 
-<div class="container">
+ <div style="color:#ffc5e5;font-size:25px">♡ ✦ ♡ ✦ ♡</div>
 
-  <!-- အစပိုင်း -->
-  <div id="intro">
+ <div class="photo">
+   <span class="heart h1">♡</span>
+   <span class="heart h2">♥</span>
+   <!-- ဒီနေရာမှာ နွေးလေးရဲ့ပုံကို ထည့်ထားမယ် -->
+   <img id="girlPhoto" alt="နွေးလေးရဲ့ဓာတ်ပုံ">
+   <p>♡ 💗 ♡<br>နွေးလေး 💗🌹</p>
+ </div>
 
-    <h1>🎂 Happy Birthday 💗</h1>
+ <div style="font-size:28px;margin:25px">🌹 💖 🌹</div>
 
-    <p class="subtitle">
-      မင်းအတွက် Surprise လေးတစ်ခုရှိတယ် 🎁
-    </p>
+ <section class="card">
+  <h2 style="color:#ffc9e8">🎂 မွေးနေ့ဆုတောင်းလေး 💐</h2>
 
-    <button
-      class="gift"
-      onclick="openGift()"
-      aria-label="Open gift">
-      🎁
-    </button>
+  Happy Birthday ပါ နွေးရေ 💗💐
 
-    <p>Open Your Surprise 💝</p>
+  မွေးနေ့ကစပြီး နောက်နှစ်ပေါင်းများစွာအထိ ပျော်ပျော်ရွှင်ရွှင်နဲ့ ဖြတ်သန်းနိုင်ပါစေနော်။ သမီးလိမ္မာလေးလည်း ဖြစ်နိုင်ပါစေဗျာ။ ဒီထက်လည်း ပိုပြီး ချစ်စရာကောင်းတဲ့ ကောင်မလေးလေး ဖြစ်ပါစေနော်။ 💗🌷
 
-    <button onclick="openGift()">
-      လက်ဆောင်လေး ဖွင့်မယ် 💗
-    </button>
+  နွေးရဲ့မွေးနေ့မှာ ကိုယ်က နွေးအနားမှာ မရှိပေးနိုင်တာရော၊ လက်ဆောင်လေးလည်း မပေးနိုင်တာရောအတွက် တောင်းပန်ပါတယ်နော်။ 🥺💞
 
-  </div>
+  ကိုယ်တို့နှစ်ယောက် နောက်နှစ်ပေါင်းများစွာအထိ အတူတူရှိနေချင်ပါတယ်နော်။ နောင်လာမယ့် နှစ်လေးတွေမှာလည်း စာအတူတူကြိုးစားပြီး ဘဝပန်းတိုင်လေးကို အတူတူ လျှောက်လှမ်းသွားကြမယ်နော်။ 💐💞
 
-  <!-- Surprise အပိုင်း -->
-  <div id="surprise">
+  နွေးရေ… ကိုယ်တို့ရဲ့ အမှတ်တရလေးတွေ အများကြီး ဖန်တီးကြရအောင်နော်။ 💖🌌
 
-    <h1>Happy Birthday Par 💞💐</h1>
+  မွေးနေ့မှာ ပျော်ရွှင်မှုတွေအပြည့်နဲ့ အပြုံးလေးတွေ အမြဲပိုင်ဆိုင်နိုင်ပါစေ။ 🎂🌹
 
-    <!--
-      ကောင်မလေးပုံကို girlfriend.jpg
-      လို့ အမည်ပေးပြီး index.html နဲ့အတူထားပါ။
-    -->
+  Happy Birthday ပါ နွေးလေးရေ။ 💗💐
+ </section>
 
-    <div class="heart-frame">
+ <div style="font-size:28px">⭐ 💗 ⭐</div>
+ <h2 style="color:#ffc9e8">နွေးအတွက် သီချင်းလေး 🎶</h2>
+ <p>သီချင်းဖွင့်ဖို့ အောက်ကခလုတ်လေးကို နှိပ်နော် 💞</p>
 
-      <img
-        src="girlfriend.jpg"
-        alt="My Special Girl"
-        onerror="
-          this.style.display='none';
-          document.getElementById('photoMissing')
-          .style.display='block';
-        ">
-
-    </div>
-
-    <p
-      id="photoMissing"
-      class="photo-note"
-      style="display:none">
-
-      ❤️ သူ့ပုံလေးကို girlfriend.jpg
-      လို့ အမည်ပေးပြီး Website ထဲ ထည့်ပေးနော် ❤️
-
-    </p>
-
-    <!-- မွေးနေ့ဆုတောင်းစာ -->
-    <div class="message">
-ကောင်မလေးရေ ပျော်ရွှင်စရာမွေးနေ့လေးဖြစ်ပါစေ ဆုတောင်းပေးလိုက်ပါတယ်။ အခုမွေးနေ့ကနေစပြီး ပျော်စရာတွေနဲ့ပဲ ဘဝကို ဖြတ်သန်းနိုင်ပါစေ။ 💗
-
-ငါနဲ့အတူ ရှိပေးခဲ့တဲ့နေ့တွေအတွက်လည်း ကျေးဇူးတင်ပါတယ်။ 💞 မင်းကို စိတ်ညစ်စရာတွေပဲ ပေးနေမိလို့လည်း တောင်းပန်ပါတယ်။
-
-ပျော်စရာမွေးနေ့လည်း ဖြစ်ပါစေ ကလေးလေးရေ။ 💞💐 မိဘကို လုပ်ကျွေးနိုင်တဲ့ သမီးကောင်းရတနာလေး ဖြစ်ပါစေဗျာ။ 💐
-    </div>
-
-    <div class="love">
-      💗💐💞🎂💞💐💗
-    </div>
-
-    <!-- သီချင်းအပိုင်း -->
-    <div class="music-box">
-
-      <h3>🎵 Our Special Song 🎵</h3>
-
-      <p class="music-note">
-        Surprise လေးဖွင့်လိုက်တာနဲ့ သီချင်းဖွင့်ဖို့
-        ကြိုးစားပေးထားတယ်နော်။ 💕<br>
-        အသံမထွက်ရင် Play ကိုနှိပ်ပေးပါ။ 🎶
-      </p>
-
-      <iframe
-        id="birthdayMusic"
-        src="https://www.youtube.com/embed/XHIPcqzrhVU?enablejsapi=1&playsinline=1"
-        title="Birthday Song"
-        allow="autoplay; encrypted-media; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-
-      <br>
-
-      <button onclick="playMusic()">
-        🎵 သီချင်းဖွင့်မယ် 💗
-      </button>
-
-    </div>
-
-    <p>🌹 မင်းရဲ့နေ့ရက်တိုင်း ပျော်ရွှင်ပါစေ 🌹</p>
-
-    <p>With Love 💗</p>
-
-    <footer>
-      Made with ❤️ just for you
-    </footer>
-
-  </div>
-
-</div>
+ <button onclick="playSong()">▶ သီချင်းဖွင့်မယ် 💗</button>
+ <div id="player"></div>
+ <p class="small">Browser က အလိုအလျောက်အသံဖွင့်တာ ပိတ်ထားနိုင်လို့ ခလုတ်ကို နှိပ်ပေးပါနော်။</p>
+ <p>နွေးလေးအတွက် ချစ်ခြင်းမေတ္တာတွေနဲ့ 💗🌌🌹</p>
+</main>
 
 <script>
-let heartsStarted = false;
-let musicStarted = false;
-
-/* Surprise ဖွင့်ရန် */
-function openGift() {
-
-  document.getElementById("intro").style.display = "none";
-
-  document.getElementById("surprise").style.display = "block";
-
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-
-  startHearts();
-
-  // Surprise ဖွင့်တဲ့အချိန် သီချင်းဖွင့်ရန် ကြိုးစားမယ်
-  playMusic();
+// ကြယ်လေးတွေ
+const sky=document.getElementById('sky');
+for(let i=0;i<100;i++){
+ let s=document.createElement('span');
+ s.className='star';s.textContent='✦';
+ s.style.left=Math.random()*100+'%';
+ s.style.top=Math.random()*100+'%';
+ s.style.fontSize=(5+Math.random()*10)+'px';
+ s.style.animationDelay=Math.random()*3+'s';
+ sky.appendChild(s);
 }
-
-/* YouTube သီချင်းဖွင့်ရန် */
-function playMusic() {
-
-  const iframe = document.getElementById("birthdayMusic");
-
-  if (!musicStarted) {
-
-    musicStarted = true;
-
-    iframe.src =
-      "https://www.youtube.com/embed/XHIPcqzrhVU?autoplay=1&playsinline=1&enablejsapi=1";
-
-  } else {
-
-    iframe.contentWindow.postMessage(
-      JSON.stringify({
-        event: "command",
-        func: "playVideo",
-        args: []
-      }),
-      "https://www.youtube.com"
-    );
-
-  }
+// ပန်းနဲ့ အသဲလေးတွေ
+for(let i=0;i<22;i++){
+ let f=document.createElement('span');
+ f.className='float';
+ f.textContent=['💗','♡','🌸','🌹','♥'][Math.floor(Math.random()*5)];
+ f.style.left=Math.random()*100+'%';
+ f.style.animationDelay=(-Math.random()*15)+'s';
+ f.style.fontSize=(16+Math.random()*18)+'px';
+ sky.appendChild(f);
 }
-
-/* နှလုံးလေးတွေ ပျံတက်ရန် */
-function startHearts() {
-
-  if (heartsStarted) return;
-
-  heartsStarted = true;
-
-  setInterval(() => {
-
-    const heart = document.createElement("div");
-
-    heart.className = "heart";
-
-    const emojis = [
-      "💗", "💖", "💕", "💘", "🌹", "💐"
-    ];
-
-    heart.textContent =
-      emojis[Math.floor(Math.random() * emojis.length)];
-
-    heart.style.left = Math.random() * 100 + "vw";
-
-    heart.style.fontSize =
-      (18 + Math.random() * 22) + "px";
-
-    heart.style.animationDuration =
-      (4 + Math.random() * 4) + "s";
-
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-      heart.remove();
-    }, 8500);
-
-  }, 400);
-
+// သီချင်း
+function playSong(){
+ document.getElementById('player').innerHTML=
+ '<iframe width="0" height="0" src="https://www.youtube-nocookie.com/embed/XHIPcqzrhVU?autoplay=1&playsinline=1" allow="autoplay; encrypted-media"></iframe>';
 }
 </script>
-
 </body>
 </html>
