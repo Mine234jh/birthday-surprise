@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Happy Birthday Nway Yu Ya Maung 💗</title>
 
 <style>
@@ -59,37 +60,46 @@ h1{
 }
 
 .moon{
-  font-size:45px;
+  font-size:48px;
   margin:10px;
   filter:drop-shadow(0 0 15px white);
 }
 
-/* HEART PHOTO */
+/* BIG HEART PHOTO */
 
 .photo-frame{
-  width:240px;
-  max-width:85vw;
-  margin:30px auto;
-  filter:drop-shadow(0 0 18px #ff80bd);
+  width:320px;
+  max-width:94vw;
+  margin:35px auto;
+  position:relative;
+  filter:
+    drop-shadow(0 0 12px #ff80bd)
+    drop-shadow(0 0 28px #ff4fa3);
+  animation:heartBeat 2s infinite;
 }
 
 .photo-frame svg{
+  display:block;
   width:100%;
   height:auto;
-  display:block;
   overflow:visible;
+}
+
+@keyframes heartBeat{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.045)}
 }
 
 .photo-caption{
   color:#ffc7e4;
   margin-top:15px;
-  font-size:18px;
+  font-size:19px;
 }
 
 /* CAKE */
 
 .cake-area{
-  margin-top:35px;
+  margin-top:45px;
 }
 
 .cake{
@@ -136,7 +146,7 @@ button:active{
 /* ENVELOPE */
 
 .envelope-area{
-  margin-top:40px;
+  margin-top:45px;
 }
 
 .envelope{
@@ -178,8 +188,10 @@ button:active{
   color:#d84d91;
 }
 
+/* MUSIC */
+
 .music{
-  margin:30px auto;
+  margin:35px auto;
   padding:18px;
   background:#ffffff12;
   border:1px solid #ffffff30;
@@ -228,48 +240,54 @@ Nway Yu Ya Maung 💗
 ♡ ✦ ♡ ✦ ♡
 </div>
 
-<!-- HEART PHOTO -->
+<!-- BIG HEART PHOTO -->
 
 <div class="photo-frame">
 
-<svg viewBox="0 0 240 220"
-     xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 300 280"
+xmlns="http://www.w3.org/2000/svg">
 
 <defs>
 
 <clipPath id="heartClip">
+
 <path d="
-M120 210
-C95 185 5 125 5 65
-C5 10 75 -5 120 48
-C165 -5 235 10 235 65
-C235 125 145 185 120 210 Z
+M150 270
+C125 245 12 165 12 90
+C12 25 90 0 150 65
+C210 0 288 25 288 90
+C288 165 175 245 150 270 Z
 "/>
+
 </clipPath>
 
 </defs>
+
+<!-- PHOTO FULL INSIDE HEART -->
 
 <image
 href="./108fb28ef2da48deb97383728c5fcd14.webp"
 x="0"
 y="0"
-width="240"
-height="220"
+width="300"
+height="280"
 preserveAspectRatio="xMidYMid slice"
 clip-path="url(#heartClip)"
 />
 
+<!-- HEART BORDER -->
+
 <path
 d="
-M120 210
-C95 185 5 125 5 65
-C5 10 75 -5 120 48
-C165 -5 235 10 235 65
-C235 125 145 185 120 210 Z
+M150 270
+C125 245 12 165 12 90
+C12 25 90 0 150 65
+C210 0 288 25 288 90
+C288 165 175 245 150 270 Z
 "
 fill="none"
 stroke="#ff9bce"
-stroke-width="4"
+stroke-width="5"
 />
 
 </svg>
@@ -277,8 +295,12 @@ stroke-width="4"
 </div>
 
 <p class="photo-caption">
-အချစ်ဆုံး နွေးလေးရေ 💞
+💗 အချစ်ဆုံး နွေးလေးရေ 💗
 </p>
+
+<div style="color:#ffb5dc;font-size:22px">
+♡ ✦ ♡ ✦ ♡
+</div>
 
 <!-- CAKE -->
 
@@ -323,8 +345,8 @@ stroke-width="4"
 </p>
 
 <div class="envelope"
-     onclick="openLetter()"
-     id="envelope">
+onclick="openLetter()"
+id="envelope">
 💌
 </div>
 
@@ -431,4 +453,67 @@ function blowCandles(){
   document.getElementById("flames").classList.add("off");
 
   document.getElementById("blowText").innerHTML=
-  "ဆုတောင်းလေးတွေ အားလုံး ပြည့်ပါစေနော် 💗✨
+  "ဆုတောင်းလေးတွေ အားလုံး ပြည့်ပါစေနော် 💗✨";
+
+  for(let i=0;i<20;i++){
+
+    let heart=document.createElement("div");
+
+    heart.innerHTML="💖";
+    heart.style.position="fixed";
+    heart.style.left=Math.random()*100+"%";
+    heart.style.top="70%";
+    heart.style.fontSize="25px";
+    heart.style.zIndex="10";
+    heart.style.pointerEvents="none";
+
+    document.body.appendChild(heart);
+
+    heart.animate([
+      {transform:"translateY(0)",opacity:1},
+      {transform:"translateY(-300px)",opacity:0}
+    ],{
+      duration:2500,
+      easing:"ease-out"
+    });
+
+    setTimeout(()=>heart.remove(),2500);
+  }
+}
+
+// OPEN LETTER
+
+function openLetter(){
+
+  const letter=document.getElementById("letter");
+
+  letter.style.display="block";
+
+  document.getElementById("envelope").innerHTML="💌💗";
+
+  letter.scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+  });
+}
+
+// PLAY MUSIC
+
+function playMusic(){
+
+  const player=document.getElementById("youtubePlayer");
+
+  player.contentWindow.postMessage(
+    JSON.stringify({
+      event:"command",
+      func:"playVideo",
+      args:[]
+    }),
+    "*"
+  );
+}
+
+</script>
+
+</body>
+</html>
