@@ -1,28 +1,25 @@
-<!DOCTYPE html>
-<html lang="my">
+<!DOCTYPE html><html lang="my">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday My Love 💗</title>
-
-<style>
+<title>Happy Birthday Nway Yu Ya Maung 💗</title><style>
 *{box-sizing:border-box}
 
 body{
   margin:0;
   min-height:100vh;
   overflow-x:hidden;
-  background:linear-gradient(180deg,#020111,#101b45,#263b68);
+  background:radial-gradient(ellipse at top,#172b55,#080d20 65%,#02040d);
   color:white;
   font-family:Arial,sans-serif;
   text-align:center;
 }
 
-.stars{
+#stars{
   position:fixed;
   inset:0;
-  overflow:hidden;
   pointer-events:none;
+  overflow:hidden;
   z-index:0;
 }
 
@@ -33,174 +30,296 @@ body{
 }
 
 @keyframes twinkle{
-  from{opacity:.25;transform:scale(.7)}
-  to{opacity:1;transform:scale(1.2)}
-}
-
-.moon{
-  position:fixed;
-  top:35px;
-  right:35px;
-  width:65px;
-  height:65px;
-  border-radius:50%;
-  background:#fff4c7;
-  box-shadow:0 0 35px #fff4c7;
-  z-index:0;
+  from{opacity:.2;transform:scale(.7)}
+  to{opacity:1;transform:scale(1.3)}
 }
 
 .container{
   position:relative;
-  z-index:1;
-  width:100%;
-  max-width:500px;
+  z-index:2;
+  padding:35px 15px 60px;
+  max-width:550px;
   margin:auto;
-  padding:65px 20px 40px;
 }
 
 h1{
-  color:#ffc8e2;
-  font-size:30px;
-  text-shadow:0 0 18px #ff70b8;
+  color:#ffd5ec;
+  text-shadow:0 0 15px #ff80c0;
+  font-size:27px;
 }
 
 .subtitle{
-  color:#e4e9ff;
-  font-size:17px;
+  color:#d8d9ff;
+  line-height:1.8;
 }
 
+.moon{
+  font-size:45px;
+  margin:10px;
+  filter:drop-shadow(0 0 15px #fff);
+}
+
+/* PHOTO */
+
 .photo-frame{
-  width:220px;
-  height:260px;
-  margin:28px auto;
-  padding:5px;
-  border:3px solid #ff8fc7;
-  border-radius:22px;
-  box-shadow:0 0 25px #ff69b4;
-  overflow:hidden;
+  width:210px;
+  height:210px;
+  margin:30px auto;
+  position:relative;
+  filter:drop-shadow(0 0 15px #ff80bd);
 }
 
 .photo-frame img{
   width:100%;
   height:100%;
   object-fit:cover;
-  border-radius:15px;
-  display:block;
+  clip-path:path("M 105 190 C 80 165 0 110 0 65 C 0 15 65 0 105 45 C 145 0 210 15 210 65 C 210 110 130 165 105 190 Z");
 }
 
-.message{
-  background:rgba(255,255,255,.09);
-  border:1px solid rgba(255,190,225,.4);
-  border-radius:20px;
-  padding:22px 17px;
-  line-height:2;
-  font-size:16px;
-  white-space:pre-line;
-  box-shadow:0 0 20px rgba(255,105,180,.15);
+.photo-caption{
+  color:#ffc7e4;
+  margin-top:15px;
+}
+
+/* CAKE */
+
+.cake-area{
+  margin-top:35px;
+}
+
+.cake{
+  font-size:105px;
+  position:relative;
+  display:inline-block;
+  animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
+}
+
+.flames{
+  font-size:25px;
+  position:absolute;
+  top:-12px;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.flames.off{
+  display:none;
 }
 
 button{
-  margin-top:22px;
-  padding:13px 25px;
-  border:none;
+  border:0;
+  padding:13px 24px;
   border-radius:30px;
-  background:#ff83bc;
-  color:#fff;
-  font-size:16px;
+  background:linear-gradient(90deg,#ff83bd,#c99aff);
+  color:#24102e;
+  font-weight:bold;
+  font-size:15px;
+  margin:12px;
   cursor:pointer;
+  box-shadow:0 0 15px #ff80bd66;
 }
 
-.music-note{
-  margin-top:15px;
+button:active{
+  transform:scale(.95);
+}
+
+/* ENVELOPE */
+
+.envelope-area{
+  margin-top:40px;
+}
+
+.envelope{
+  font-size:100px;
+  cursor:pointer;
+  display:inline-block;
+  transition:.5s;
+  filter:drop-shadow(0 0 15px #ff83c4);
+}
+
+.envelope:hover{
+  transform:scale(1.12);
+}
+
+.hint{
+  color:#ffd2ed;
+}
+
+.letter{
+  display:none;
+  background:linear-gradient(145deg,#fff0f7,#f6ddff);
+  color:#542c53;
+  border-radius:20px;
+  padding:25px 20px;
+  margin:20px auto;
+  line-height:2;
+  text-align:left;
+  box-shadow:0 0 25px #ff8fc766;
+  animation:appear 1s;
+}
+
+@keyframes appear{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.letter h2{
+  text-align:center;
+  color:#d84d91;
+}
+
+.music{
+  margin:30px auto;
+  padding:18px;
+  background:#ffffff12;
+  border:1px solid #ffffff30;
+  border-radius:20px;
+}
+
+.music p{
+  color:#ffd3eb;
+}
+
+iframe{
+  width:100%;
+  max-width:350px;
+  height:100px;
+  border:0;
+  border-radius:12px;
+}
+
+footer{
+  color:#c9c7ec;
+  margin-top:40px;
   font-size:13px;
-  color:#cdd8ff;
 }
-
-.heart{
-  position:fixed;
-  bottom:-30px;
-  color:#ff8fc7;
-  animation:floatUp 7s linear infinite;
-  z-index:0;
-  pointer-events:none;
-}
-
-@keyframes floatUp{
-  from{transform:translateY(0);opacity:0}
-  20%{opacity:1}
-  to{transform:translateY(-110vh);opacity:0}
-}
-</style>
-</head>
-
-<body>
-
-<div class="stars" id="stars"></div>
-<div class="moon"></div>
-
-<div class="container">
-
-  <h1>Happy Birthday Par 💞💐</h1>
-  <p class="subtitle">🌙 ကလေးလေးအတွက် မွေးနေ့လက်ဆောင် 🌙</p>
-
-  <div class="photo-frame">
-    <img
-      src="108fb28ef2da48deb97383728c5fcd14.webp"
-      alt="မွေးနေ့ရှင်လေး"
-    >
-  </div>
-
-  <div class="message">မွေးနေ့မှာ ပျော်ရွှင်မှုတွေအများကြီး ပိုင်ဆိုင်နိုင်ပါစေ ကလေးလေးရေ 💗🎂
-
+</style></head><body><div id="stars"></div><div class="container"><div class="moon">🌙✨</div><h1>Happy Birthday<br>Nway Yu Ya Maung 💗</h1><p class="subtitle">
+ဒီညကောင်းကင်လိုပဲ<br>
+နွေးရဲ့ဘဝလေး အမြဲတမ်း လှပတောက်ပနေပါစေ။
+</p><div style="color:#ffb5dc;font-size:22px">
+♡ ✦ ♡ ✦ ♡
+</div><!-- PHOTO --><div class="photo-frame">
+<img
+src="https://raw.githubusercontent.com/Mine234jh/birthday-surprise/main/108fb28ef2da48deb97383728c5fcd14.webp"
+alt="Nway Yu Ya Maung"
+>
+</div><p class="photo-caption">
+အချစ်ဆုံး နွေးလေးရေ 💞
+</p><!-- CAKE --><div class="cake-area"><h2 style="color:#ffd5ec">
+🎂 မွေးနေ့ကိတ်လေး 🎂
+</h2><div class="cake">
+  <div class="flames" id="flames">🕯️🔥</div>
+  🎂
+</div><p>နွေးလေးရေ ဆုတောင်းပြီး ဖယောင်းတိုင်လေး မှုတ်လိုက်နော် 💗</p><button onclick="blowCandles()">
+💨 ဖယောင်းတိုင် မီးမှုတ်မယ်
+</button><p id="blowText"></p></div><!-- ENVELOPE --><div class="envelope-area"><h2 style="color:#ffd5ec">
+💌 နွေးလေးအတွက် စာလေးတစ်စောင်
+</h2><p class="hint">စာအိတ်လေးကို နှိပ်ပြီး ဖွင့်ကြည့်နော် 💗</p><div class="envelope" onclick="openLetter()" id="envelope">
+💌
+</div><div class="letter" id="letter"><h2>To My Special Girl 💗</h2><p>
+မွေးနေ့မှာ ပျော်ရွှင်မှုတွေအများကြီး ပိုင်ဆိုင်နိုင်ပါစေ နွေးလေးရေ 💗🎂
+</p><p>
 ကိုယ်တို့အတူတူရှိခဲ့တဲ့ နေ့ရက်လေးတွေအတွက် ကျေးဇူးတင်ပါတယ်နော်။ 🥹💞
-
-ကိုယ်ကြောင့် စိတ်ပူခဲ့ရတာတွေ၊ စိတ်ညစ်ခဲ့ရတာတွေရှိရင်လည်း တောင်းပန်ပါတယ်နော်။ နောက်ဆို ပိုဂရုစိုက်ပေးမယ်။ ❤️
-
+</p><p>
+ကိုယ်ကြောင့် စိတ်ပင်ပန်းခဲ့၊ စိတ်ညစ်ခဲ့ရတာတွေရှိရင်လည်း တောင်းပန်ပါတယ်နော်။ နောက်ဆို ပိုဂရုစိုက်ပေးမယ်။ ❤️
+</p><p>
 ကလေးလေးရေ အမြဲတမ်း အပြုံးလေးတွေနဲ့ ပျော်ပျော်ရွှင်ရွှင် နေနိုင်ပါစေ။ ကိုယ်ချစ်ရတဲ့သူတွေနဲ့လည်း အမြဲတမ်း အဆင်ပြေပါစေ။ 💐
-
+</p><p>
 မိဘနှစ်ပါးကိုလည်း ကောင်းကောင်းပြုစုစောင့်ရှောက်နိုင်တဲ့ သမီးလိမ္မာလေးတစ်ယောက် ဖြစ်ပါစေနော်။ 🫶
-
+</p><p>
 ကလေးလေးရဲ့ အိပ်မက်တွေအားလုံး တစ်ခုချင်းစီ ပြည့်ဝလာပါစေ။ မွေးနေ့မှစပြီး နေ့ရက်တိုင်း လှပပါစေ။ 🌙✨
+</p><h2>Happy Birthday ပါ ကလေးလေးရေ။ 💗🎂💐</h2><p style="text-align:center">
+With Love ❤️
+</p></div>
+</div><!-- MUSIC --><div class="music"><h3>🎵 Our Special Song 🎵</h3><p>နွေးလေးအတွက် သီချင်းလေးပါ 💗</p><iframe
+id="youtubePlayer"
+src="https://www.youtube.com/embed/XHIPcqzrhVU?enablejsapi=1&autoplay=1&playsinline=1"
+allow="autoplay; encrypted-media"
+>
+</iframe><br /><button onclick="playMusic()">
+🎵 သီချင်းဖွင့်မယ်
+</button><p style="font-size:12px">
+Browser က Auto Play ကို ပိတ်ထားရင် ဒီခလုတ်လေးနှိပ်ပေးပါနော်။
+</p></div><footer>
+Made with Love 💗<br>
+For Nway Yu Ya Maung 🌙
+</footer></div><script>
 
-Happy Birthday ပါ ကလေးလေးရေ။ 💗🎂💐</div>
+// STAR SKY
 
-  <button onclick="playMusic()">🎵 သီချင်းဖွင့်မယ်</button>
-  <div class="music-note" id="musicStatus">
-    သီချင်းအလိုအလျောက်ဖွင့်ဖို့ ကြိုးစားနေပါတယ် 💗
-  </div>
+const sky=document.getElementById("stars");
 
-  <audio id="song" loop preload="auto">
-    <source src="https://www.youtube.com/watch?v=XHIPcqzrhVU" type="audio/mpeg">
-  </audio>
-
-</div>
-
-<script>
-/* ကြယ်လေးတွေ ဖန်တီးခြင်း */
-const stars = document.getElementById("stars");
-
-for(let i=0;i<100;i++){
-  const star=document.createElement("span");
+for(let i=0;i<130;i++){
+  let star=document.createElement("div");
   star.className="star";
-  star.textContent=Math.random()>.5?"✦":"·";
+  star.innerHTML="✦";
   star.style.left=Math.random()*100+"%";
   star.style.top=Math.random()*100+"%";
-  star.style.fontSize=(Math.random()*12+5)+"px";
+  star.style.fontSize=(Math.random()*9+3)+"px";
   star.style.animationDelay=Math.random()*3+"s";
-  stars.appendChild(star);
+  sky.appendChild(star);
 }
 
-/* လွင့်တက်လာမယ့် နှလုံးလေးတွေ */
-setInterval(()=>{
-  const heart=document.createElement("div");
-  heart.className="heart";
-  heart.textContent="♥";
-  heart.style.left=Math.random()*100+"%";
-  heart.style.fontSize=(Math.random()*15+12)+"px";
-  document.body.appendChild(heart);
-  setTimeout(()=>heart.remove(),7000);
-},900);
+// BLOW CANDLES
 
-/*
-  မှတ်ချက်:
-  YouTube URL ကို <audio> ထဲထည့်ရုံနဲ့ မဖွမဖွမဖွမဖွမဖွမဖွမဖွမဖွမဖွမဖွမဖွမဖွမဖွမဖွမဖွမဖွမဖွမဖွမဖွဖွမွမဖမဖွဖွမွမဖမဖွဖွမွမဖဖွမဖမဖွဖွမွမဖမဖွဖွမွမဖမဖွွမဖွွမဖမဖွဖွမွမဖမဖွဖွမွမဖမဖ
+function blowCandles(){
+  document.getElementById("flames").classList.add("off");
+
+  document.getElementById("blowText").innerHTML=
+  "ဆုတောင်းလေးတွေ အားလုံး ပြည့်ပါစေနော် 💗✨";
+
+  for(let i=0;i<15;i++){
+    let heart=document.createElement("div");
+    heart.innerHTML="💖";
+    heart.style.position="fixed";
+    heart.style.left=Math.random()*100+"%";
+    heart.style.top="70%";
+    heart.style.fontSize="25px";
+    heart.style.zIndex="10";
+    heart.style.pointerEvents="none";
+    document.body.appendChild(heart);
+
+    heart.animate([
+      {transform:"translateY(0)",opacity:1},
+      {transform:"translateY(-300px)",opacity:0}
+    ],{
+      duration:2500,
+      easing:"ease-out"
+    });
+
+    setTimeout(()=>heart.remove(),2500);
+  }
+}
+
+// OPEN LETTER
+
+function openLetter(){
+  document.getElementById("letter").style.display="block";
+  document.getElementById("envelope").innerHTML="💌💗";
+  document.getElementById("letter").scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+  });
+}
+
+// PLAY MUSIC
+
+function playMusic(){
+  const player=document.getElementById("youtubePlayer");
+  player.contentWindow.postMessage(
+    JSON.stringify({
+      event:"command",
+      func:"playVideo",
+      args:[]
+    }),
+    "*"
+  );
+}
+
+</script></body>
+</html>
